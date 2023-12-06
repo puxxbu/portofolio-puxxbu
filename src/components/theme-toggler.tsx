@@ -17,31 +17,31 @@ export const ThemeToggler = (props: CustomProps) => {
         rounded-full
         bg-[var(--primary)]
         text-[var(--primary-text)]
-        p-[5.5px]
+        p-[3.5px]
         flex
         items-center
         gap-[3.5px]
         relative
         after:content-['']
         after:absolute
-        after:top-[4.5px]
-        after:left-[7.5px]
+        after:top-[3.5px]
+        after:left-[3.5px]
         after:rounded-full
-        after:w-[24px]
-        after:h-[24px]
+        after:w-[18px]
+        after:h-[18px]
         after:bg-[var(--primary-text)]
         after:ease-in-out
         after:transition-transform
         ${appContext.themeMode(
           "after:translate-x-0",
-          "after:translate-x-[calc(18px+5.5px)]"
+          "after:translate-x-[calc(18px+3.5px)]"
         )}
     `,
         props
       )}
     >
-      <Icon path={mdiWeatherNight} size={1}></Icon>
-      <Icon path={mdiWeatherSunny} size={1}></Icon>
+      <Icon path={mdiWeatherNight} size={"18px"}></Icon>
+      <Icon path={mdiWeatherSunny} size={"18px"}></Icon>
     </div>
   );
 };
