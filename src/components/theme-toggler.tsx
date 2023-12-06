@@ -1,10 +1,10 @@
 // import { UilMoon, UilSun } from '@iconscout/react-unicons'
 
+import { mdiWeatherNight, mdiWeatherSunny } from "@mdi/js";
 import Icon from "@mdi/react";
 import { useAppContext } from "../contexts/app-context";
 import { CustomProps } from "../interfaces";
 import { mergeClassName } from "../utils";
-import { mdiMoonFull, mdiWeatherNight, mdiWeatherSunny } from "@mdi/js";
 
 export const ThemeToggler = (props: CustomProps) => {
   const appContext = useAppContext();

@@ -1,10 +1,10 @@
 // import { Icon, UilApps, UilArrow, UilMessage, UilPicture, UilTimes, UilUser } from '@iconscout/react-unicons'
 import { useEffect, useRef, useState } from "react";
 
+import Icon from "@mdi/react";
 import { useAppContext } from "../contexts/app-context";
 import { Container } from "./container";
 import { ThemeToggler } from "./theme-toggler";
-import Icon from "@mdi/react";
 
 import {
   mdiAccount,
@@ -12,7 +12,6 @@ import {
   mdiClose,
   mdiHumanGreetingProximity,
   mdiImageFrame,
-  mdiTimeline,
   mdiTools,
 } from "@mdi/js";
 

@@ -29,13 +29,24 @@ import {
 } from "@mdi/js";
 import ProfilePicture from "../assets/profile.jpg";
 import AboutMePic from "../assets/about_me_pict.jpg";
-
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export const AppBody = () => {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      disable: "phone",
+      duration: 600,
+      easing: "ease-out-sine",
+    });
+  });
   return (
     <Container>
       {/* me */}
       <Section
         id="home"
+        data-aos="fade-up"
         className="flex items-center mobile:flex-col mobile:items-center gap-6"
       >
         <div className="flex-1 flex flex-col items-start mobile:items-center mobile:text-center">
@@ -71,7 +82,7 @@ export const AppBody = () => {
       </Section>
 
       {/* about */}
-      <Section id="about">
+      <Section data-aos="fade-up" id="about">
         <div className="text-center">
           <SectionTitle>About</SectionTitle>
           <SectionSubtitle>My introduction</SectionSubtitle>
@@ -122,7 +133,7 @@ export const AppBody = () => {
       </Section>
 
       {/* skills */}
-      <Section id="skills">
+      <Section data-aos="fade-up" id="skills">
         <div className="text-center">
           <SectionTitle>Skills</SectionTitle>
           <SectionSubtitle>My technical skills</SectionSubtitle>
@@ -147,7 +158,7 @@ export const AppBody = () => {
       </Section>
 
       {/* portofolio */}
-      <Section id="portofolio">
+      <Section data-aos="fade-up" id="portofolio">
         <div className="text-center">
           <SectionTitle>Portofolio</SectionTitle>
           <SectionSubtitle>My works</SectionSubtitle>
@@ -157,7 +168,7 @@ export const AppBody = () => {
       </Section>
 
       {/* contact */}
-      <Section id="contactme">
+      <Section data-aos="fade-up" id="contactme">
         <div className="text-center">
           <SectionTitle>Contact</SectionTitle>
           <SectionSubtitle>Get in touch</SectionSubtitle>
