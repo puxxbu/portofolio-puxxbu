@@ -115,7 +115,7 @@ export const AppHeader = () => {
         {/* open sidebar */}
         <button
           onClick={() => setOpenSidebar(true)}
-          className="mobile:block hidden"
+          className="hidden mobile:block"
           title="close sidebar"
         >
           <Icon path={mdiApps} size={1}></Icon>
@@ -124,12 +124,12 @@ export const AppHeader = () => {
         {/* title */}
         <a
           href="#home"
-          className={`text-2xl font-signature ${appContext.onSectionActive(
+          className={`text-2xl  ${appContext.onSectionActive(
             "home",
             "text-[var(--primary)]"
           )}`}
         >
-          Mononymperson
+          Profile
         </a>
 
         {/* menu */}
@@ -159,7 +159,7 @@ export const AppHeader = () => {
         >
           {/* close sidebar */}
           <button
-            className="mobile:block hidden ml-auto"
+            className="hidden ml-auto mobile:block"
             title="close sidebar"
             onClick={() => setOpenSidebar(false)}
           >
@@ -180,7 +180,7 @@ export const AppHeader = () => {
             `}
             >
               <Icon
-                className="mobile:block hidden"
+                className="hidden mobile:block"
                 path={menu.icon}
                 size={1}
               ></Icon>

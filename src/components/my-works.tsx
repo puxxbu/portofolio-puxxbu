@@ -1,57 +1,31 @@
-import Porto1 from "../assets/portofolio_1.png";
-import Porto2 from "../assets/portofolio_2.png";
-import Porto3 from "../assets/portofolio_3.png";
-import Porto4 from "../assets/portofolio_4.png";
-import Porto5 from "../assets/portofolio_5.png";
-import Porto6 from "../assets/portofolio_6.png";
+import Icon from "@mdi/react";
+
+import { mdiGithub } from "@mdi/js";
+import Porto2 from "../assets/porto-admin.png";
+import PortoPatuli from "../assets/porto-patuli.png";
 
 interface Work {
   title: string;
   description: string;
   image: string;
+  link?: string;
 }
 
 const Works: Work[] = [
   {
-    title: "Musiclue",
+    title: "Patuli (Pahlawan Tuli)",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum libero temporibus eum velit facilis distinctio officiis enim corrupti nobis iste. Similique minus fugiat excepturi laborum et voluptatibus quas quis beatae?",
-    image: Porto1,
+      "Patuli (Pahlawan Tuli) is an Android-based application to learn and communicate sign language using Bisindo gestures with integrated machine-learning.",
+    image: PortoPatuli,
+    link: "https://github.com/Patuli-Pahlawan-Tuli",
   },
 
   {
-    title: "Movielia",
+    title: "Hotel Admin Dashboard",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum libero temporibus eum velit facilis distinctio officiis enim corrupti nobis iste. Similique minus fugiat excepturi laborum et voluptatibus quas quis beatae?",
+      "This admin dashboard project is built using React and Typescript. The functionalities of this admin dashboard include CRUD, booking transactions, check-in, check-out and reports for hotel owners.",
     image: Porto2,
-  },
-
-  {
-    title: "Rokerjob",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum libero temporibus eum velit facilis distinctio officiis enim corrupti nobis iste. Similique minus fugiat excepturi laborum et voluptatibus quas quis beatae?",
-    image: Porto3,
-  },
-
-  {
-    title: "Book Searcher",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum libero temporibus eum velit facilis distinctio officiis enim corrupti nobis iste. Similique minus fugiat excepturi laborum et voluptatibus quas quis beatae?",
-    image: Porto4,
-  },
-
-  {
-    title: "Otakufigure",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum libero temporibus eum velit facilis distinctio officiis enim corrupti nobis iste. Similique minus fugiat excepturi laborum et voluptatibus quas quis beatae?",
-    image: Porto5,
-  },
-
-  {
-    title: "Raiburari",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum libero temporibus eum velit facilis distinctio officiis enim corrupti nobis iste. Similique minus fugiat excepturi laborum et voluptatibus quas quis beatae?",
-    image: Porto6,
+    link: "https://github.com/puxxbu",
   },
 ];
 
@@ -85,7 +59,7 @@ export const MyWorks = () => {
         >
           {/* img */}
           <img
-            className="min-h-[200px] max-h-[200px] object-cover"
+            className="min-h-[200px] max-h-[200px] object-contain"
             alt={work.image}
             src={work.image}
           ></img>
@@ -96,23 +70,30 @@ export const MyWorks = () => {
 
             <div className="flex items-start mobile:flex-col gap-3.5">
               <p className="text-sm line-clamp-5">{work.description}</p>
-              <button
-                className="
-                    mt-auto
-                    rounded-md
-                    px-3
-                    py-1.5
-                    text-sm
-                    border
-                    border-[var(--primary)]
-                    text-[var(--primary)]
-                    hover:bg-[var(--primary)]
-                    hover:text-[var(--primary-text)]
-                "
-              >
-                Demo
-              </button>
             </div>
+            <button
+              className="
+              mt-auto
+              rounded-md
+              px-3
+              py-1.5
+              text-sm
+              border
+              border-[var(--primary)]
+              text-[var(--primary)]
+              hover:bg-[var(--primary)]
+              hover:text-[var(--primary-text)]
+              flex
+              items-center
+              justify-center
+                "
+              onClick={() => window.open(work.link, "_blank")}
+            >
+              <div className="flex items-center">
+                <Icon path={mdiGithub} size={1} className="mr-1"></Icon>
+                <span>View Code</span>
+              </div>
+            </button>
           </div>
         </div>
       ))}
